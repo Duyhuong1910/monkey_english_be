@@ -7,7 +7,7 @@ const morgan = require("morgan");
 
 const app = express();
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: proceess.env.CORS_ORIGIN || "https://monkey-learn.vercel.app",
   methods: "GET, POST, PUT, HEAD, PATCH, DELETE",
   credentials: true,
   optionsSuccessStatus: 204,
