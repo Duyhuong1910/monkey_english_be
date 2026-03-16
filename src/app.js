@@ -1,13 +1,15 @@
 // src/app.js
+require('dotenv').config()
 const express = require("express");
 const cors = require("cors");
 const compression = require("compression");
 const { default: helmet } = require("helmet");
 const morgan = require("morgan");
-
+const { app: { cors: corsOrigin } } = require("./configs/config");
+console.log("CORS_ORIGIN:", corsOrigin);
 const app = express();
 const corsOptions = {
-  origin: process.env.CORS_ORIGIN || "https://monkey-learn.vercel.app",
+  origin: corsOrigin,
   methods: "GET, POST, PUT, HEAD, PATCH, DELETE",
   credentials: true,
   optionsSuccessStatus: 204,

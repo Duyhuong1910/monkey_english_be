@@ -2,6 +2,7 @@ const config = {
   app: {
     port: process.env.PORT,
     env: process.env.NODE_ENV,
+    cors: process.env.CORS_ORIGIN
   },
   db: {
     host: process.env.DB_HOST,
