@@ -10,7 +10,7 @@ async function createAdmin() {
     // 1. Hash mật khẩu bằng bcrypt
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(plainPassword, salt);
-
+    // console.log("hashedPassword:", hashedPassword);
     // 2. Insert vào Database
     const query = `
             INSERT INTO users (username, email, password_hash, role) 
